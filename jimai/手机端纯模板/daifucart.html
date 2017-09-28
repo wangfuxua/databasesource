@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    
+    <head>
+        <title>
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/ylapp.icon.css">
+        <link rel="stylesheet" href="css/ylapp.control.css">
+        <style>
+            .c_list{
+                margin-top: 1em;
+                font-size: .8em;
+            }
+            
+            .c_list li{
+                background: #FFFFFF;
+                margin-bottom: .5rem;
+                padding: .5rem;
+            }
+            .c_list .l_left{
+                float: left;
+                width: 16%;
+            }
+            .c_list .l_left img{
+                width: 100%;
+            }
+            .c_list .l_right{
+                float: right;
+                width: 82%;
+                text-align: left;
+            }
+            .t1{
+                /*text-overflow:ellipsis;
+                overflow: hidden;
+                height: 6rem;*/
+               word-break:break-all;
+               margin-bottom: .3rem;
+            }
+            
+            .t2,.t3{
+               color: #6A6A6A;
+               margin-bottom: .3rem;
+            }
+            
+            .btn-yuan{
+                width: 90%;
+                margin: 0 auto;
+                background:#F1565A;
+                color:#ffffff;
+                height: 2.5em;
+                line-height: 2.5em;
+                border-radius:.5rem;
+                text-align: center;
+            }
+            
+            
+        </style>
+    </head>
+    
+    <body class="" ontouchstart>
+        
+        <div class="bc-bg" tabindex="0" data-control="PAGE" id="Page">
+            <div class="uh cc-head  ubb bc-border" data-control="HEADER" id="Header">
+                <div class="ub">
+                    <div class="nav-btn" id="nav-left">
+                        <div class="fa fa-1g fa-chevron-left ub-img1" onclick="ylapp.window.close(1)">
+                        </div>
+                    </div>
+                    <h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">代付清单</h1>
+                    <div class="nav-btn" id="nav-right">
+                        <div class="fa fa-headphones ub-img1" onclick="ylapp.window.open('im', 'im.html', 2, 128);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            <div class="" data-control="CONTENT" id="ScrollContent" style="top:12em;">
+                
+                <div class="scrollbox">
+                    <div class="box_bounce ub ub-ver ub-pc">
+                        <div class="ub-f1">
+                            
+                            <div class="c_list" id="list1">
+                                <!--<center>
+                                    <img src="./css/images/i_1.png" />
+                                    <div>暂无代购单需要处理</div>
+                                    <div class="btn-yuan" style="margin-top: 2em;" onclick="ylapp.window.open('daifuadd', 'daifuadd.html', 2, 128);">
+                                        立即添加
+                                    </div>
+                                    
+                                </center>-->
+                                
+                                <ul style="padding-bottom: 4rem">
+                                    <li>
+                                        <div class="l_left">
+                                            <img src="css/images/ico_2.png" />
+                                        </div>
+                                        <div class="l_right">
+                                            <div class="t1">
+                                                申请的鸟人
+                                            </div>
+                                            <div class="t2">
+                                                代付金额：182.11
+                                                </div>
+                                            
+                                        </div>
+                                        <div style="clear:both"></div>
+                                    </li>
+                                    
+                                    <li>
+                                        <div class="l_left">
+                                            <img src="css/images/ico_2.png" />
+                                        </div>
+                                        <div class="l_right">
+                                            <div class="t1">
+                                                申请的鸟人
+                                            </div>
+                                            <div class="t2">
+                                                代付金额：182.11
+                                                </div>
+                                            
+                                        </div>
+                                        <div style="clear:both"></div>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="background: #FFFFFF;padding-top: .5rem;padding-bottom:.5rem;text-align: center;position: fixed;bottom: 0;width: 100%;">
+            <div class="btn-yuan" onclick="ylapp.window.open('daifuorderadd', 'daifuorderadd.html', 2, 128);">立即下单</div>
+        </div>
+        <script src="js/ylapp.js"></script>
+        <script src="js/ylapp.control.js"></script>
+        <script src="js/ylapp.scrollbox.js"></script>
+        <script src="js/template.import.js"></script>
+
+        <script>
+            
+            ylapp.ready(function() {
+                
+            });
+        </script>
+    </body>
+
+</html>

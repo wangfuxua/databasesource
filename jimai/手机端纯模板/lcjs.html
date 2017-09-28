@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    
+    <head>
+        <title>
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/ylapp.icon.css">
+        <link rel="stylesheet" href="css/ylapp.control.css">
+        <style>
+           
+
+        </style>
+    </head>
+    
+    <body ontouchstart>
+        <div class="bc-bg" tabindex="0" data-control="PAGE" id="Page">
+            <div class="uh cc-head ubb bc-border" data-control="HEADER" id="Header">
+                <div class="ub">
+                    <div class="nav-btn" id="nav-left">
+                        <div class="fa fa-1g fa-chevron-left ub-img1" onclick="ylapp.window.close(1)">
+                        </div>
+                    </div>
+                    <h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">流程介绍</h1>
+                    <div class="nav-btn" id="nav-right">
+                        
+                    </div>
+                </div>
+                
+                
+
+                
+            </div>
+            
+            <div style="width: 100%;height: 100%;position: absolute;" id="body">
+                <style>
+                    iframe *{
+                        font-size: .8rem;
+                    }
+                </style>
+                <iframe scrolling="no" src="http://h.eqxiu.com/s/sMfqDiCE?eqrcode=1&from=groupmessage&isappinstalled=0" style="width: 100%;height: 100%;" border=0></iframe>
+            </div>
+            
+        </div>
+        
+        <script src="js/ylapp.js"></script>
+        <script src="js/ylapp.control.js"></script>
+        <script src="js/ylapp.scrollbox.js"></script>
+        <script src="js/template.import.js"></script>
+        <script>
+            ylapp.ready(function() {
+                var titHeight = $('#Header').offset().height;
+                $("#body").height($('body').height()-titHeight).css("top",titHeight+"px");
+                //ylapp.frame.open("content", "http://h.eqxiu.com/s/sMfqDiCE?eqrcode=1&from=groupmessage&isappinstalled=0", 0, titHeight);
+            });
+           
+        </script>
+    </body>
+
+</html>

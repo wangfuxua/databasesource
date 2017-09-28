@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    
+    <head>
+        <title>
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/ylapp.icon.css">
+        <link rel="stylesheet" href="css/ylapp.control.css">
+        <style>
+           .main-1{
+               background: #ededed;
+           }
+           
+           .btn-yuan{
+                width: 70%;
+                margin: 0 auto;
+                background: #f1565a;
+                color:#ffffff;
+                height: 2em;
+                line-height: 2em;
+                border-radius:.5em;
+                margin-top: 1em;
+                margin-bottom:1em;
+                border: 0px;
+                font-size: .9em;
+            }
+            .no_data{
+                margin-top: 20em;
+                color: #959494;
+            }
+        </style>
+    </head>
+    
+    <body ontouchstart>
+        <div class="bc-bg" tabindex="0" data-control="PAGE" id="Page">
+            <div class="uh cc-head ubb bc-border" data-control="HEADER" id="Header">
+                <div class="ub">
+                    <div class="nav-btn" id="nav-left">
+                        <div class="fa fa-1g fa-chevron-left ub-img1" onclick="ylapp.window.close(1)">
+                        </div>
+                    </div>
+                    <h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">我的jbuy私人仓库</h1>
+                    <div class="nav-btn" id="nav-right">
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="" data-control="CONTENT" id="ScrollContent" style="padding: 2.63em 0 0 0">
+                <div class="scrollbox">
+                    <div class="box_bounce ub ub-ver ub-pc">
+                        <div class="ub-f1">
+                            <div class="no_data">
+                                <div class="fa fa-upload fa-2x"></div>
+                                <div>您的私人仓库空空如也！</div>
+                                <div class="btn-yuan" onclick="ylapp.window.open('myaddr', 'myaddr.html', 2, 128);">我要寄包裹</div>
+                            </div>
+                        </div>
+                        <div class="bounce_status">下拉更新......</div>
+                        <div class="bounce_status">松手更新......</div>
+                        <div class="bounce_status">更新中......</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <script src="js/ylapp.js"></script>
+        <script src="js/ylapp.control.js"></script>
+        <script src="js/ylapp.scrollbox.js"></script>
+        <script src="js/template.import.js"></script>
+        <script>
+            ylapp.ready(function() {
+                if (navigator.platform=="Win32"){
+                    $("#form").css("top","9em");
+                }
+            });
+            (function($) {
+                ylapp.button("#nav-left", "btn-act",
+                function() {});
+                ylapp.button("#nav-right", "btn-act",
+                function() {});
+                ylapp.ready(function() {
+                    $.scrollbox($("body")).on("releaseToReload",
+                    function() { //After Release or call reload function,we reset the bounce
+                        //$("#ScrollContent").trigger("reload", this);
+                        $(".bounce_status").html('<i class="fa fa-spinner fa-spin fa-2x"></i>加载中');
+                    }).on("onReloading",
+                    function(a) { //if onreloading status, drag will trigger this event
+                        $(".bounce_status").html('<i class="fa fa-spinner fa-spin fa-2x"></i>下拉加载');
+                    }).on("dragToReload",
+                    function() { //drag over 30% of bounce height,will trigger this event
+                        alert(11111);
+                    }).on("draging",
+                    function(status) { //on draging, this event will be triggered.
+                        alert(status);
+                    }).on("release",
+                    function() { //on draging, this event will be triggered.
+                        alert(3333);
+                    }).on("scrollbottom",
+                    function() { //on scroll bottom,this event will be triggered.you should get data from server
+                        $(".bounce_status").html('<i class="fa fa-spinner fa-spin fa-2x"></i>加载中');
+                    }).reload();
+                }) 
+            })($);
+        </script>
+    </body>
+
+</html>

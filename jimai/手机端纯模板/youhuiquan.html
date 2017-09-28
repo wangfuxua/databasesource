@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    
+    <head>
+        <title>
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/ylapp.icon.css">
+        <link rel="stylesheet" href="css/ylapp.control.css">
+        <style>
+           .list1{
+               margin: 0 auto;
+               width: 90%;
+           }
+           .list1 li{
+               background: #93cfe7;
+               color: #FFFFFF;
+               padding: .5rem;
+               margin-bottom: .8rem;
+           }
+        </style>
+    </head>
+    
+    <body ontouchstart>
+        <div class="bc-bg" tabindex="0" data-control="PAGE" id="Page" style="background: #FFFFFF">
+            <div class="uh cc-head ubb bc-border" data-control="HEADER" id="Header">
+                <div class="ub">
+                    <div class="nav-btn" id="nav-left">
+                        <div class="fa fa-1g fa-chevron-left ub-img1" onclick="ylapp.window.close(1)">
+                        </div>
+                    </div>
+                    <h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">优惠券</h1>
+                    <div class="nav-btn" id="nav-right">
+                        
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="uf sc-bg  bc-border" style="background: #FFFFFF;top: 3em;">
+                    <!--///-->
+                    <div class="list1">
+                        <ul>
+                            <li>111111111</li>
+                            <li>2222</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        
+        <script src="js/ylapp.js"></script>
+        <script src="js/ylapp.control.js"></script>
+        <script src="js/ylapp.scrollbox.js"></script>
+        <script src="js/template.import.js"></script>
+        <script>
+            ylapp.ready(function() {
+                $(".div-1-con li").click(function(){
+                    if ($(this).find(".ul-con").css("display") != "none"){
+                        return;
+                    }
+                    var obj = $(this).parent();
+                    obj.find(".ul-con").hide();
+                    obj.find(".ul-title").find("i").addClass("fa-caret-right").removeClass("fa-caret-down");
+                    obj.find(".ul-title").css("color","#80807F");
+                    $(this).find(".ul-con").show();
+                    $(this).find(".ul-title").css("color","#000000");
+                    $(this).find(".ul-title").find("i").addClass("fa-caret-down").removeClass("fa-caret-right");
+                    //alert(obj.length);
+                });
+            });
+            
+        </script>
+    </body>
+
+</html>

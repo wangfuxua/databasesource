@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    
+    <head>
+        <title>
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/ylapp.icon.css">
+        <link rel="stylesheet" href="css/ylapp.control.css">
+        <style>
+            .c_list{
+                font-size: .8em;
+                margin-bottom: 3.5rem;
+            }
+            .c_list li{
+                background: #FFFFFF;
+                margin-bottom: .5rem;
+                text-align: left;
+                line-height: 1rem;
+            }
+            .l-1{
+                padding: .5rem;
+                font-size: .8rem;
+                line-height: 2rem;
+                background: #F1565A;
+                color: #FFFFFF;
+                padding-top: 1.5rem;
+            }
+            .c_list li .l-1 .status{
+                float: right;
+                color: #E31114;
+                font-size: .8rem;
+            }
+            .l-2 li{
+                background: #f2f2f2;
+                margin-bottom: .1rem;
+                padding: .5rem;
+                text-align: left;
+                line-height: 1.2rem;
+                font-size: 0.7rem;
+            }
+            .l-2 .l_left{
+                float: left;
+                width: 16%;
+            }
+            .l-2 .l_left img{
+                width: 100%;
+            }
+            .l-2 .l_right{
+                float: right;
+                width: 70%;
+                text-align: left;
+            }
+            .l-2 .l_status{
+                float: right;
+                width: 12%;
+                color:red;
+                text-align:right;
+                
+            }
+            .l-4{
+                padding: .6rem;border-top:1px solid #ccc
+            }
+            .l-3{
+                line-height: 2.5rem;
+                font-size: .9rem;
+                text-indent: 1rem;
+            }
+            .t1{
+                text-overflow:ellipsis;
+                overflow: hidden;
+                height: 2.4rem;
+                line-height1.2rem;
+               word-break:break-all;
+               margin-bottom: .3rem;
+               color: #333333;
+            }
+            
+            .t2{
+               color: #c0bfbf;
+               margin-bottom: .3rem;
+               text-overflow:ellipsis;
+               overflow: hidden;
+               line-height: 1rem;
+            }
+           .btn-yuan{
+                width: 85%;
+                margin: 0 auto;
+                background: #f1565a;
+                color:#ffffff;
+                height: 2.5em;
+                line-height: 2.5em;
+                border-radius:.5em;
+                margin-top: 1em;
+                margin-bottom:1em;
+                border: 0px;
+                font-size: .9em;
+            }
+        </style>
+    </head>
+    
+    <body class="" ontouchstart>
+        
+        <div class="bc-bg" tabindex="0" data-control="PAGE" id="Page">
+            <div class="uh cc-head  ubb bc-border" data-control="HEADER" id="Header">
+                <div class="ub">
+                    <div class="nav-btn" id="nav-left">
+                        <div class="fa fa-1g fa-chevron-left ub-img1" onclick="ylapp.window.close(1)">
+                        </div>
+                    </div>
+                    <h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">订单详情</h1>
+                    <div class="nav-btn" id="nav-right">
+                        <div class="fa fa-1g ub-img1 fa-remove" style="margin-right: 1em;" onclick="removeOrder();">
+                        </div>
+                        <div class="fa fa-headphones ub-img1" onclick="ylapp.window.open('im', 'im.html', 2, 128);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            <div class="" data-control="CONTENT" id="ScrollContent" style="top:11.5em;">
+                
+                <div class="scrollbox">
+                    <div class="box_bounce ub ub-ver ub-pc">
+                        <div class="ub-f1">
+                            <div class="c_list" id="list1">
+                                
+                                <ul>
+                                    <li>
+                                        <div class="l-1">
+                                            <div>2017-2-7 12:12:12<span class="status" style="color: #FFFFFF">待付款</span></div>
+                                            <div>No：4436546443423434 <span id="copy_btn" data="4436546443423434">复制订单号</span></div>
+                                        </div>
+                                        <div style="height: .6rem;background: #f2f2f2">
+                                            
+                                        </div>
+                                        <div class="l-3">
+                                           <div style="float: left">100000000999</div>
+                                           <div style="float: right;padding-right: 1rem; color: #F1565A" onclick="ylapp.window.open('daifuorderdetail', 'daifuorderdetail.html', 2, 128);">
+                                               查看详情
+                                           </div>
+                                        </div>
+                                        <div style="height: .6rem;background: #f2f2f2;clear: both">
+                                            
+                                        </div>
+                                        <div class="l-3">
+                                            商品详情
+                                        </div>
+                                        <div class="l-2">
+                                            <ul>
+                                                
+                                                <li>
+                                                    <div class="l_left">
+                                                        <img src="css/images/alipay.png" />
+                                                    </div>
+                                                    
+                                                    <div class="l_status">
+                                                        ￥12.99
+                                                    </div>
+                                                    
+                                                    <div class="l_right">
+                                                        <div class="t1">
+                                                            hhhh
+                                                        </div>
+                                                        <div class="t2">
+                                                            运费：￥188.99 数量：1
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    
+                                                    <div style="clear:both"></div>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="l-4" style="color: #80807F">
+                                            <div style="float: left">
+                                               实付金额（含运费） 
+                                            </div>
+                                            <div style="float: right">
+                                               ￥1:000
+                                            </div>
+                                            <div style="clear: both;"></div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: #FFFFFF;padding-top: .5rem;padding-bottom:.5rem;text-align: center;position: fixed;bottom: 0;width: 100%;">
+                <div class="btn-yuan" onclick="ylapp.window.open('pay', 'pay.html', 2, 128);">去付款</div>
+            </div>
+        
+        </div>
+        
+        <script src="js/ylapp.js"></script>
+        <script src="js/ylapp.control.js"></script>
+        <script src="js/ylapp.scrollbox.js"></script>
+        <script src="js/ylapp.tab.js"></script>
+        <script src="js/template.import.js"></script>
+        <script src="js/clipboard.min.js"></script>
+        <script>
+            ylapp.ready(function() {
+                
+            });
+            function removeOrder() {
+                if (confirm('是否确认取消订单？')==false){
+                    return;
+                }
+                alert('ok');
+            }
+            var clipboard = new Clipboard('#copy_btn', {
+                text: function() {
+                    return $("#copy_btn").attr("data");
+                }
+            });
+            clipboard.on('success', function(e) {
+                alert("已复制到粘贴板");
+            });
+        </script>
+    </body>
+
+</html>

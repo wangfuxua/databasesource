@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    
+    <head>
+        <title>
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/ylapp.icon.css">
+        <link rel="stylesheet" href="css/ylapp.control.css">
+        <style>
+           .main-1{
+               background: #ededed;
+           }
+           .main-1-top{
+               width: 95%;
+               text-align: center;
+               margin: 0 auto;
+           }
+           .main-1-top img{
+               width: 100%;
+           }
+           
+           .div-1{
+               margin: 0 auto;
+               width: 95%;
+           }
+           .div-1-top{
+               padding: .5em;
+               background: #f1565a;
+               color: #fff;
+               border-radius: 1em 1em 0px 0px;
+               font-size: .8em;
+               text-indent: .5em
+           }
+           .div-1-top span{
+               font-size: 0.7em;
+           }
+           .div-1-con{
+               background: #FFFFFF;
+               padding: .6em;
+               padding-top: 1em;
+           }
+           .input_b{
+               border-radius: 0.5em;
+               border: 1px solid #ccc;
+               line-height: 3em;
+               font-size: .8em;
+               height: 3em;
+               margin-top: 1em;
+           }
+           .text-b {
+               border-right:1px solid #ccc; 
+               padding-left: 1em;
+               padding-right: 1em;
+               float: left;
+               
+           }
+           .input_b .text-input{
+               width:60%;
+               float: left;
+           }
+           .input_b .text-input input[type='text']{
+               width: 98%;
+               padding-left: 1em;
+               height: 100%;
+               border:0px;
+               background-color:transparent;
+               padding-top:.9em;
+           }
+           .input_b .text-input select{
+               width: 98%;
+               padding-left: 1em;
+               height: 100%;
+               border:0px;
+               background-color:transparent;
+               padding-top:.8em;
+               color: #6a6a6a;
+               font-size:1em;
+           }
+           .btn-yuan{
+                width: 70%;
+                margin: 0 auto;
+                background: #f1565a;
+                color:#ffffff;
+                height: 2em;
+                line-height: 2em;
+                border-radius:.5em;
+                margin-top: 1em;
+                margin-bottom:1em;
+                border: 0px;
+                font-size: .9em;
+            }
+            .div-2-con{
+               background: #FFFFFF;
+               padding-top: .8em;
+               text-align: center;
+           }
+           .div-2-con .img img{
+               width: 60%;
+           }
+           .b-btn{
+               background: #f1565a;
+               height: 2.5em;
+               line-height: 2.5em;
+               font-size:.85em;
+               color: #ffffff;
+           }
+        </style>
+    </head>
+    
+    <body style="padding-bottom: 1em;" ontouchstart>
+        <div class="bc-bg" tabindex="0" data-control="PAGE" id="Page">
+            <div class="uh cc-head ubb bc-border" data-control="HEADER" id="Header">
+                <div class="ub">
+                    <div class="nav-btn" id="nav-left">
+                        <div class="fa fa-1g fa-chevron-left ub-img1" onclick="ylapp.window.close(1)">
+                        </div>
+                    </div>
+                    <h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">添加包裹</h1>
+                    <div class="nav-btn" id="nav-right">
+                        
+                    </div>
+                </div>
+                <div class="ub ub-ver ub-fv main-1">
+                    <div class="main-1-top">
+                        <img src="./css/images/ad_1.png" onclick="ylapp.window.open('price', 'price.html', 2, 128);"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="uf sc-bg  bc-border" id="form" style="top: 8em;">
+                <div class="div-1">
+                    <div class="div-1-top">
+                        <i class="fa fa-edit fa-2x"></i> 填写寄往Jbuy的国内包裹<span>(物流信息首页显示更新)</span>
+                    </div>
+                    <div class="div-1-con">
+                        <form>
+                            <div class="input_b">
+                                <div class="text-b">物流单号</div>
+                                <div class="text-input uinput">
+                                    <input placeholder="包裹物流单号" type="text" name="no" id="no">
+                                </div>
+                                <div class="uinn fa sc-text fa-qrcode" style="font-size: 1.2em;" onclick="scanNo();">
+            </div>
+                            </div>
+                            
+                            <div class="input_b">
+                                <div class="text-b">物流公司</div>
+                                <div class="text-input uinput select">
+                                    <select name="kd">
+                                        <option selected="">请选择 ></option>
+                                        <option>顺丰快递</option>
+                                        <option>韵达快递</option>
+                                    </select>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="input_b">
+                                <div class="text-b">包裹内容</div>
+                                <div class="text-input uinput">
+                                    <input placeholder="请填写包裹内容" type="text" name="no">
+                                </div>
+                                
+                            </div>
+                            <div style="text-align: center">
+                                <button class="btn-yuan" style="margin-top: 2em;">
+                                        添加国内物流单
+                                    </button>
+                            </div>     
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="uf sc-bg  bc-border" style="top: 9em;">
+                <div class="div-1">
+                    <div class="div-1-top">
+                        <i class="fa fa-plane fa-2x"></i> 填不填单号，包裹已寄往Jbuy
+                    </div>
+                    <div class="div-2-con">
+                        <div class="img">
+                            <img src="./css/images/ad_2.png" />
+                        </div>
+                        <div class="b-btn" onclick="ylapp.window.open('warehouse', 'warehouse.html', 2, 128);">查看包裹是否已经到达</div>
+                    </div>
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+        </div>
+        
+        <script src="js/ylapp.js"></script>
+        <script src="js/ylapp.control.js"></script>
+        <script src="js/ylapp.scrollbox.js"></script>
+        <script src="js/template.import.js"></script>
+        <script>
+            ylapp.ready(function() {
+                if (navigator.platform=="Win32"){
+                    $("#form").css("top","9em");
+                }
+            });
+            
+            function scanNo(){
+                if (typeof uexScanner == "undefined") {
+                    alert("没有可调用的扫码程序");
+                }else {
+                    uexScanner.open(function(error, data){
+                        if(!error){
+                            var code = data.code;
+                            $("#no").val(code);
+                            //alert("data:" + JSON.stringify(data));
+                          }else{
+                            alert("failed!");
+                          }
+                    });
+                }
+            }
+        </script>
+    </body>
+
+</html>

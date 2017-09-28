@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    
+    <head>
+        <title>
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/ylapp.icon.css">
+        <link rel="stylesheet" href="css/ylapp.control.css">
+        <style>
+           .main-1{
+               background: #ededed;
+           }
+           .main-1-top{
+               width: 100%;
+               background: #FFFFFF;
+               color: #000000;
+               padding: .5rem;
+               font-size: .8rem;
+           }
+           
+           .div-1{
+               margin: 0 auto;
+               width: 95%;
+           }
+           .div-1-top{
+               padding: .5em;
+               background: #f1565a;
+               color: #fff;
+               border-radius: 1em 1em 0px 0px;
+               font-size: .9rem;
+               text-indent: .5em
+           }
+           
+           .div-1-con{
+               background: #FFFFFF;
+               padding: .6em;
+               
+           }
+           .input_b{
+               border-radius: 0.5em;
+               border: 1px solid #ccc;
+               line-height: 3em;
+               font-size: .8em;
+               height: 3em;
+               margin-top: 1em;
+           }
+           .text-b {
+               border-right:1px solid #ccc; 
+               padding-left: 1em;
+               padding-right: 1em;
+               float: left;
+               
+           }
+           .input_b .text-input{
+               width:60%;
+               float: left;
+           }
+           
+           .input_b .text-input select{
+               width: 98%;
+               padding-left: 1em;
+               height: 100%;
+               border:0px;
+               background-color:transparent;
+               padding-top:.8em;
+               color: #6a6a6a;
+               font-size:1em;
+           }
+           .btn-yuan{
+                width: 70%;
+                margin: 0 auto;
+                background: #f1565a;
+                color:#ffffff;
+                height: 2em;
+                line-height: 2em;
+                border-radius:.5em;
+                margin-top: .5rem;
+                margin-bottom:.5rem;
+                border: 0px;
+                font-size: .9em;
+            }
+            
+            .list{
+                border: 1px solid #CCCCCC;
+                min-height: 3rem;
+                margin: 0 auto;
+                width: 95%;
+            }
+            
+            .list li{
+                line-height: 2rem;
+                width: 95%;
+                margin: 0 auto;
+                border-bottom: 1px solid #CCCCCC;
+                font-size: .8rem;
+                color: #636363;
+            }
+            
+            .yindao{
+                display:none;
+                top:0;
+                width: 100%;height: 100%;
+                position: fixed;
+                z-index: 99999;
+                background: rgba(0,0,0,0.8);
+              text-align: center;
+              padding-top:30%; 
+            }
+            
+        </style>
+    </head>
+    
+    <body style="padding-bottom: 5rem;" ontouchstart>
+        <div class="yindao" id="zzsl">
+            <img src="css/images/zzsl.png" style="width: 80%"/>
+            <div>
+                <div class="fa fa-close" onclick="$('#zzsl').hide();" style="color: #ffffff"></div>
+            </div>
+        </div>
+        <div class="bc-bg" tabindex="0" data-control="PAGE" id="Page">
+            <div class="uh cc-head ubb bc-border" data-control="HEADER" id="Header">
+                <div class="ub">
+                    <div class="nav-btn" id="nav-left">
+                        <div class="fa fa-1g fa-chevron-left ub-img1" onclick="ylapp.window.close(1)">
+                        </div>
+                    </div>
+                    <h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">外币支付</h1>
+                    <div class="nav-btn" id="nav-right">
+                        
+                    </div>
+                </div>
+                <div class="ub ub-ver ub-fv main-1">
+                    <div class="main-1-top">
+                        <div style="float: left;">支付金额（￥）</div>
+                        <div style="float: right;color: #F1565A;padding-right: 1rem;">12.88</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="uf sc-bg  bc-border" style="top: 6em;"> 
+                <div class="div-1">
+                    <div class="div-1-top">
+                        选择收款账号国家及银行</span>
+                    </div>
+                    <div class="div-1-con">
+                        <form>
+                            
+                            <div class="input_b">
+                                <div class="text-b">国家</div>
+                                <div class="text-input uinput select">
+                                    <select name="kd">
+                                        <option selected="">请选择 ></option>
+                                        <option>中国大陆</option>
+                                        <option>澳大利亚</option>
+                                        <option>新西兰</option>
+                                        <option>美国</option>
+                                    </select>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="input_b">
+                                <div class="text-b">银行</div>
+                                <div class="text-input uinput select">
+                                    <select name="kd">
+                                        <option selected="">请选择 ></option>
+                                        <option>中国大陆</option>
+                                        <option>啊啊啊</option>
+                                        <option>新西兰</option>
+                                        <option>美国</option>
+                                    </select>
+                                </div>
+                                
+                            </div>
+                            
+                            
+                             
+                        </form>
+                    </div>
+                    
+                    <div style="background: #FFFFFF;padding-bottom: 1rem;">
+                        <div style="font-size: .8rem;padding: .5rem;">收款方账号及转账金额（暂不支持跨行转账）</div>
+                        <div class="list">
+                            <li>Transfer Money：<span id="money"></span></li>
+                            <li>Account Name：<span id="name"></span></li>
+                            <li>Account Bsb：<span id="bsb"></span></li>
+                            <li style="border: 0">Account No：<span id="no"></span></li>
+                        </div>
+                    </div>
+                    
+                    <div class="" style="font-size: .9rem;">
+                        <div style="line-height: 3rem;">上传转账凭证截图</div>
+                        <div style="background: #FFFFFF;padding: 1rem;">
+                            <div style="float: left;">
+                                <div class="fa fa-upload fa-2x" onclick="$('#file1').click();"></div>
+                                <span id="file-text"></span>
+                            </div>
+                            <div style="float: right;color: #636363" onclick="$('#zzsl').show();">
+                                查看示意图片
+                            </div>
+                            <div style="clear: both"></div>
+                            <form enctype ="multipart/form-data" id="">
+                                <input type="file" accept="image/*;capture=camera" class="input" name="img" value="" style="display:none" id="file1">
+                            </form>
+                        </div>
+                        
+                        <div style="clear: both;height: 5rem;"></div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div style="background: #FFFFFF;text-align: center;position: fixed;bottom: 0;width: 100%;">
+                <div class="btn-yuan" onclick="doUpload(1);">完成支付</div>
+            </div>
+        </div>
+        
+        <script src="js/ylapp.js"></script>
+        <script src="js/ylapp.control.js"></script>
+        <script src="js/ylapp.scrollbox.js"></script>
+        <script src="js/template.import.js"></script>
+        <script>
+            ylapp.ready(function() {
+                /*文件域变化js*/
+                $('#file1').change(function() {
+                    $('#file-text').html($(this).val());
+                });
+            });
+            
+            /*上传文件*/
+            function doUpload(filetype) {
+                var strs = new Array(); /*定义一数组*/
+                var val= $('#file1').val();
+                strs = val.split('.');
+                var suffix = strs [strs .length - 1];
+                if (suffix != 'png' && suffix != 'jpg' && suffix != 'gif' && suffix != 'jpeg') {
+                    alert("只能上传png,jpg,gif,jpeg文件！");
+                    var obj = document.getElementById('file1');
+                    obj.outerHTML = obj.outerHTML; /*这样清空，在IE8下也能执行成功*/
+                    $("#file-text").html("");
+                    return;
+                     /*obj.select(); document.selection.clear(); 好像这种方法也可以清空 input file 的value值，不过我没测试*/
+                }
+                var formData = new FormData($( "#form_{#$timestamp#}" )[0]);
+                $.ajax({  
+                     url: '/protocol/uploadFile/filetype/'+filetype,
+                     type: 'POST',  
+                     data: formData,  
+                     async: false,  
+                     cache: false,  
+                     contentType: false,  
+                     processData: false,
+                     dataType: 'json',
+                     success: function (returndata) {
+                         if (returndata.msg != "") {
+                             $("#file-text").html("文件上传成功");
+                         } else {
+                             alert(returndata.err);
+                         }
+                         return;
+                     },  
+                     error: function (returndata) {  
+                         alert(returndata);
+                     }
+                });
+            }
+        </script>
+    </body>
+
+</html>

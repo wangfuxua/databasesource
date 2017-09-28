@@ -1,0 +1,8 @@
+python manage.py inspectdb > app/models.py 
+
+
+
+
+
+
+maijin1602: WdleeDeGj3xnzjH3

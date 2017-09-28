@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    
+    <head>
+        <title>
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/ylapp.icon.css">
+        <link rel="stylesheet" href="css/ylapp.control.css">
+        <style>
+            .c_list{
+                font-size: .8em;
+                margin-bottom: 3.5rem;
+            }
+            .c_list li{
+                background: #FFFFFF;
+                margin-bottom: .5rem;
+                text-align: left;
+                line-height: 1rem;
+            }
+            .l-1{
+                padding: .5rem;
+                font-size: .8rem;
+                line-height: 2rem;
+            }
+            .c_list li .l-1 .status{
+                float: right;
+                color: #E31114;
+                font-size: .8rem;
+            }
+            .l-2 li{
+                background: #f2f2f2;
+                margin-bottom: .1rem;
+                padding: .5rem;
+                text-align: left;
+                line-height: 1.2rem;
+                font-size: 0.7rem;
+            }
+            .l-2 .l_left{
+                float: left;
+                width: 16%;
+            }
+            .l-2 .l_left img{
+                width: 100%;
+            }
+            .l-2 .l_right{
+                float: right;
+                width: 70%;
+                text-align: left;
+            }
+            .l-2 .l_status{
+                float: right;
+                width: 12%;
+                color:red;
+                text-align:right;
+                
+            }
+            .l-4{
+                padding: .6rem;border-top:1px solid #ccc
+            }
+            .l-3{
+                line-height: 2.5rem;
+                font-size: .9rem;
+                text-indent: 1rem;
+            }
+            .t1{
+                text-overflow:ellipsis;
+                overflow: hidden;
+                height: 2.4rem;
+                line-height1.2rem;
+               word-break:break-all;
+               margin-bottom: .3rem;
+               color: #333333;
+            }
+            
+            .t2{
+               color: #c0bfbf;
+               margin-bottom: .3rem;
+               text-overflow:ellipsis;
+               overflow: hidden;
+               line-height: 1rem;
+            }
+
+        .input_b{
+               border-radius: 0.5em;
+               border: 1px solid #ccc;
+               line-height: 3em;
+               font-size: .8em;
+               min-height: 3em;
+               padding-left: 1rem;
+               padding-right: 1rem;
+               background: #FFFFFF
+           }
+           
+        </style>
+    </head>
+    
+    <body class="" ontouchstart>
+        
+        <div class="bc-bg" tabindex="0" data-control="PAGE" id="Page">
+            <div class="uh cc-head  ubb bc-border" data-control="HEADER" id="Header">
+                <div class="ub">
+                    <div class="nav-btn" id="nav-left">
+                        <div class="fa fa-1g fa-chevron-left ub-img1" onclick="ylapp.window.close(1)">
+                        </div>
+                    </div>
+                    <h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">代购详情</h1>
+                    <div class="nav-btn" id="nav-right">
+                        <div class="fa fa-1g ub-img1 fa-remove" style="margin-right: 1em;" onclick="removeOrder();">
+                        </div>
+                        <div class="fa fa-headphones ub-img1" onclick="ylapp.window.open('im', 'im.html', 2, 128);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            <div class="" data-control="CONTENT" id="ScrollContent" style="top:13em;">
+                
+                <div class="scrollbox">
+                    <div class="box_bounce ub ub-ver ub-pc">
+                        <div class="ub-f1">
+                            <div class="c_list" id="list1">
+                                
+                                <ul>
+                                    <li>
+                                        <div class="l-1">
+                                            <div>代购订单：4436546443423434</div>
+                                            <div>2017-2-7 12:12:12<span class="status">待算价</span></div>
+                                        </div>
+                                        <div class="l-2" style="background: #f2f2f2;padding: 1rem;">
+                                            <div class="input_b">
+                                                <div>
+                                                    <div style="float: left">国民小斌</div>
+                                                    <div style="float: right">18565452145</div>
+                                                </div>
+                                                <div style="clear: both;line-height: 1rem;color: #6A6A6A;margin-bottom: 1rem;">
+                                                    上海市某某区某某路某某哈哈哈哈哈或或或或或或或或或或或或或或或或
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="l-3">
+                                            商品清单
+                                        </div>
+                                        <div class="l-2">
+                                            <ul>
+                                                <li>
+                                                    <div class="l_left">
+                                                        <img src="css/images/alipay.png" />
+                                                    </div>
+                                                    
+                                                    <div class="l_status">
+                                                        待算价
+                                                    </div>
+                                                    
+                                                    <div class="l_right">
+                                                        <div class="t1">
+                                                            
+                                                                http://www.divcss5.com/rumen/r/r532.shtml?http://w532.shtml?http://www.divcss5.com/rumen/r532.shtml
+                                                            
+                                                        </div>
+                                                        <div class="t2">
+                                                            <b>数量：</b>111。<b>规格：</b>设置或检索是否使用一个省略号标记（...）标示对象内文本文字的溢出.
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    
+                                                    <div style="clear:both"></div>
+                                                </li>
+                                                
+                                                <li>
+                                                    <div class="l_left">
+                                                        <img src="css/images/alipay.png" />
+                                                    </div>
+                                                    
+                                                    <div class="l_status">
+                                                        待算价
+                                                    </div>
+                                                    
+                                                    <div class="l_right">
+                                                        <div class="t1">
+                                                            
+                                                                http://www.divcss5.com/rumen/r/r532.shtml?http://w532.shtml?http://www.divcss5.com/rumen/r532.shtml
+                                                            
+                                                        </div>
+                                                        <div class="t2">
+                                                            <b>数量：</b>111。<b>规格：</b>设置或检索是否使用一个省略号标记（...）标示对象内文本文字的溢出.
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    
+                                                    <div style="clear:both"></div>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                        <div class="l-3">
+                                            备注信息
+                                        </div>
+                                        <div class="l-4">
+                                            备注信息！！！备注信息！！！备注信息！！！备注信息！！！备注信息！！！备注信息！！！
+                                        </div>
+                                        <div class="l-4" style="color: #80807F">
+                                            <div style="float: left">
+                                               实付金额（含运费） 
+                                            </div>
+                                            <div style="float: right">
+                                               ￥1:000
+                                            </div>
+                                            <div style="clear: both;"></div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="js/ylapp.js"></script>
+        <script src="js/ylapp.control.js"></script>
+        <script src="js/ylapp.scrollbox.js"></script>
+        <script src="js/ylapp.tab.js"></script>
+        <script src="js/template.import.js"></script>
+        <script src="js/p-pull-refresh.js"></script>
+        <script>
+            ylapp.ready(function() {
+                
+            });
+            function removeOrder() {
+                if (confirm('是否确认取消代购？')==false){
+                    return;
+                }
+                alert('ok');
+            }
+        </script>
+    </body>
+
+</html>

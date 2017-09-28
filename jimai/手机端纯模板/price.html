@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    
+    <head>
+        <title>
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/ylapp.icon.css">
+        <link rel="stylesheet" href="css/ylapp.control.css">
+        <style>
+           .div-1{
+               width: 100%;
+               background: #FFFFFF;
+           }
+           #tab1{
+               
+           }
+           #tab1 li{
+               float: left;
+               line-height: 2.5em;
+               padding-left: 1em;
+               padding-right: 1em;
+               font-weight: bold;
+               background: #DFDFDF;
+               color: #000000;
+               border-bottom: 0.1em solid #CCCCCC;
+               font-size: .9em;
+           }
+           #tab1 li.active{
+               color: #F1565A;
+               border-bottom: .1em solid #F1565A
+           }
+           
+           .div-1 .con{
+               width: 90%;
+               margin: 0 auto;
+               display: none;
+               font-size: .85em;
+           }
+           .div-1 div img{
+               max-width: 100%;
+           }
+        </style>
+    </head>
+    
+    <body ontouchstart>
+        <div class="bc-bg" tabindex="0" data-control="PAGE" id="Page" style="background: #FFFFFF">
+            <div class="uh cc-head ubb bc-border" data-control="HEADER" id="Header">
+                <div class="ub">
+                    <div class="nav-btn" id="nav-left">
+                        <div class="fa fa-1g fa-chevron-left ub-img1" onclick="ylapp.window.close(1)">
+                        </div>
+                    </div>
+                    <h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">价格表</h1>
+                    <div class="nav-btn" id="nav-right">
+                        
+                    </div>
+                </div>
+                
+                <div class="uf sc-bg ubb bc-border" id="tab1" style="width: 400%;background: #DFDFDF">
+                    <ul id="ul_div">
+                        <li class="active" data-index=1>新西兰专线</li>
+                        <li data-index=2>海运</li>
+                        <li data-index=3>TNT特惠</li>
+                        <li data-index=4>电池专线</li>
+                        <li data-index=5>加拿大专线</li>
+                        <li data-index=6>英国专线</li>
+                    </ul>
+                    <div style="clear: both;"></div>
+                </div>
+
+                
+            </div>
+            
+            <div class="uf sc-bg  bc-border" style="background: #FFFFFF;top: 6em;">
+                         
+                <div class="div-1">
+                    <div id="con_1" class="con" style="display: block">
+                        新西兰专线内容
+                    </div>
+                    <div id="con_2" class="con">
+                        海运内容
+                    </div>
+                    <div id="con_3" class="con">
+                        3333
+                    </div>
+                    <div id="con_4" class="con">
+                        44444
+                    </div>
+                    <div id="con_5" class="con">
+                        海55555555
+                    </div>
+                    <div id="con_6" class="con">
+                        66666666
+                    </div>
+                    
+                </div>
+                
+                    <!--///-->
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        
+        <script src="js/ylapp.js"></script>
+        <script src="js/ylapp.control.js"></script>
+        <script src="js/ylapp.scrollbox.js"></script>
+        <script src="js/template.import.js"></script>
+        <script src="js/ylapp.tab.js"></script>
+        <script>
+            ylapp.ready(function() {
+                var pageWidth = $("body").width();
+                $("#tab1").find("li").click(function(){
+                    var count = $("#ul_div").find("li");
+                    var index = $(this).attr("data-index");
+                    $(this).parent().find("li").removeClass("active");
+                    $(this).addClass("active");
+                    $(".div-1").find(".con").hide();
+                    $("#con_"+index).show();
+                    //
+                    if (index<4) {
+                        $("#ul_div").css("margin-left", "0px");
+                        return;
+                    } else if (count-index<4) {
+                        $("#ul_div").css("margin-right", "0px");
+                    }
+                    var tempW = $(this).offset().left;
+                    var thisW = $(this).width();
+                    var leftW = parseInt($("#ul_div").css("margin-left"));
+                    var tempChu = tempW/pageWidth;
+                    if (tempChu<0.5){
+                        var tempCha = leftW+thisW;
+                    } else {
+                        var tempCha = leftW-thisW;
+                    }
+                    $("#ul_div").css("margin-left", tempCha+"px");
+                });
+            });
+           
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    
+    <head>
+        <title>
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/ylapp.icon.css">
+        <link rel="stylesheet" href="css/ylapp.control.css">
+        <style>
+
+           .btn-yuan{
+                width: 85%;
+                margin: 0 auto;
+                background: #f1565a;
+                color:#ffffff;
+                height: 2.5em;
+                line-height: 2.5em;
+                border-radius:.5em;
+                margin-top: 1em;
+                margin-bottom:1em;
+                border: 0px;
+                font-size: .9em;
+            }
+        </style>
+    </head>
+    
+    <body ontouchstart>
+        <div class="bc-bg" tabindex="0" data-control="PAGE" id="Page" style="background: #FFFFFF">
+            <div class="uh cc-head ubb bc-border" data-control="HEADER" id="Header">
+                <div class="ub">
+                    <div class="nav-btn" id="nav-left">
+                        <div class="fa fa-1g fa-chevron-left ub-img1" onclick="ylapp.window.close(1)">
+                        </div>
+                    </div>
+                    <h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">在线支付</h1>
+                    <div class="nav-btn" id="nav-right">
+                        
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="uf sc-bg  bc-border" style="background: #FFFFFF;top: 3em;">
+                <div class="ub ub-ver">
+                    <div class="umar-at1" style="font-size: 0.8rem;">
+                        <div id="listview1" class="ubt bc-border sc-bg c-wh umar-at1">
+                            
+                        </div>
+                        <div id="listview2" class="ubt bc-border sc-bg c-wh umar-at1" style="margin-top: .5rem;">
+                            
+                        </div>
+                        <div id="listview3" class="bc-border sc-bg c-wh umar-at1">
+                            
+                        </div>
+                        
+                        <div id="listview4"  class="ubt bc-border sc-bg" style="margin-top:.5rem;">
+                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: #FFFFFF;padding-top: .5rem;padding-bottom:.5rem;text-align: center;position: fixed;bottom: 0;width: 100%;">
+                <div class="btn-yuan" onclick="gopay();">确认支付</div>
+            </div>
+            <input type="hidden" id="paytype" value="0" />
+            <input type="hidden" id="yue" value="0" />
+        </div>
+        
+        <script src="js/ylapp.js"></script>
+        <script src="js/ylapp.control.js"></script>
+        <script src="js/ylapp.scrollbox.js"></script>
+        <script src="js/template.import.js"></script>
+        <script src="js/ylapp.listview.js"></script>
+        <script>
+            ylapp.ready(function() {
+                
+            });
+            var lv1 = ylapp.listview({
+                selector : "#listview1",
+                type : "thinLine",
+                hasIcon : false,
+                hasSubTitle : true,
+                hasAngle : false,
+                multiLine : 1
+            });
+            lv1.set([{
+                icon : '',
+                title : '订单编号',
+                subTitle : '879079979769797'
+            }, {
+                icon : '',
+                title : '支付金额',
+                subTitle : '<font color=red>￥12.99</font>'
+            }]);
+        
+        var lv2 = ylapp.listview({
+            selector : "#listview2",
+            type : "thickLine",
+            hasIcon : false,
+            hasAngle : false,
+            hasSubTitle : true,
+            multiLine : 1
+        });
+        lv2.set([{
+            id : "1",
+            icon : '',
+            title : '优惠券',
+            subTitle : '6张可用  >'
+        }, {
+            id : "2",
+            icon : '',
+            title : '余额支付',
+            subTitle : '账户余额：￥0.00'
+        }]);
+        lv2.on('click', function(ele, context, obj, subobj) {
+            var id = context.id;
+            alert(id);
+        });
+        
+        var lv3 = ylapp.listview({
+            selector : "#listview3",
+            type : "thickLine",
+            hasIcon : false,
+            hasAngle : false,
+            hasSubTitle : true,
+            multiLine : 1,
+            hasRadiobox: false,
+            hasCheckbox:true,
+        });
+        lv3.set([{
+            icon : '',
+            title : '余额支付',
+        }]);
+        lv3.on("checkbox:change",function(obj,data){
+            if (data.checked){
+                $("#yue").val(1);
+            } else {
+                $("#yue").val(0);
+            }
+        });
+        
+        //设置支付方式列表
+            var lv4 = ylapp.listview({
+                selector : "#listview4",
+                type : "thinLine",
+                hasIcon : true,
+                hasAngle : false,
+                hasSubTitle : true,
+                multiLine : 1,
+                hasRadiobox : true,
+                align : 'right'
+            });
+            lv4.set([{
+                title : "微信支付",
+                subTitle:'推荐使用',
+                id : '1',
+                icon : "css/images/wx_ico.png",
+            },{
+                title : "转账汇款",
+                subTitle:'',
+                id : '2',
+                icon : "css/images/band_ico.png",
+            }]);
+            
+            lv4.on('click', function(ele, context, obj, subobj) {
+                //渲染数据
+                var id          = context.id;
+                $("#paytype").val(id);
+            });
+            
+            function gopay(){
+                var paytype = $("#paytype").val();
+                if (paytype==1) {
+                    //微信支付
+                } else if(paytype==2) {
+                    ylapp.window.open('pay2', 'pay2.html', 2, 128);
+                } else {
+                    alert('请选择支付方式！');
+                }
+            }
+        </script>
+    </body>
+
+</html>
