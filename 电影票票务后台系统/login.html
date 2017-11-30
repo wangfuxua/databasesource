@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Simpla Admin </title>
+<!--                       CSS                       -->
+<!-- Reset Stylesheet -->
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" />
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+<!-- Invalid Stylesheet. This makes stuff look pretty. Remove it if you want the CSS completely valid -->
+<link rel="stylesheet" href="css/invalid.css" type="text/css" media="screen" />
+<!-- Main Stylesheet -->
+<link rel="stylesheet" type="text/css" href="css/bgstretcher.css" />
+<!--                       Javascripts                       -->
+<!-- jQuery -->
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<!-- jQuery Configuration -->
+<script type="text/javascript" src="js/simpla.jquery.configuration.js"></script>
+<!--	jQuery Configuration   -->
+<script type="text/javascript" src="js/bgstretcher.js"></script>
+<!-- Facebox jQuery Plugin -->
+<script type="text/javascript" src="js/popus.js"></script>
+<!-- jQuery WYSIWYG Plugin -->
+<script type="text/javascript" src="js/jquery.wysiwyg.js"></script>
+<!--	jQuery Configuration config  -->
+<script type="text/javascript">
+			$(document).ready(function() {
+
+				//  Initialize Backgound Stretcher	   
+				$('BODY').bgStretcher({
+					images: ['images/1.jpg', 'images/2.jpg', 'images/3.jpg'],
+					imageWidth: window.screen.width ,
+					imageHeight: window.screen.height,
+					slideDirection: 'N',
+					slideShowSpeed: 1000,
+					transitionEffect: 'fade',
+					sequenceMode: 'normal',
+					buttonPrev: '#prev',
+					buttonNext: '#next',
+					pagination: '#nav',
+					anchoring: 'left center',
+					anchoringImg: 'left center'
+				});
+
+			});
+		</script>
+</head>
+<body id="login">
+<div id="login-wrapper" class="png_bg">
+  <div id="login-top">
+    <h1>Simpla Admin</h1>
+    <!-- Logo (221px width) -->
+    <a href="#"><img id="logo" src="images/logopiao.png" alt="Simpla Admin logo" /></a> </div>
+  <!-- End #logn-top -->
+  <div id="login-content">
+    <form action="index.html">
+      <div class="notification error png_bg">
+        <div> 密码输错惹！！！</div>
+      </div>
+      <p>
+        <label>用户名</label>
+        <input class="text-input" type="text" />
+        <label class="error" for="">此项为必填项</label>
+      </p>
+      <div class="clear"></div>
+      <p>
+        <label>密码</label>
+        <input class="text-input" type="password" />
+      </p>
+      <div class="clear"></div>
+      <p>
+        <input class="button" type="submit" value="登录" />
+      </p>
+    </form>
+  </div>
+  <!-- End #login-content -->
+</div>
+<!-- End #login-wrapper -->
+</body>
+</html>

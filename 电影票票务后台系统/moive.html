@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>爱梦影院票务管理系统</title>
+<!--                       CSS                       -->
+<!-- Reset Stylesheet -->
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" />
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+<!-- Invalid Stylesheet. This makes stuff look pretty. Remove it if you want the CSS completely valid -->
+<link rel="stylesheet" href="css/invalid.css" type="text/css" media="screen" />
+<!--glDatePicker.flatwhite-->
+<link rel="stylesheet" href="js/My97DatePickerBeta/My97DatePicker/skin/WdatePicker.css" type="text/css" media="screen" />
+<!--                       Javascripts                       -->
+<!-- jQuery -->
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<!-- jQuery Datepicker Plugin -->
+<script type="text/javascript" src="js/My97DatePickerBeta/My97DatePicker/WdatePicker.js"></script>
+<!-- jQuery Configuration -->
+<script type="text/javascript" src="js/simpla.jquery.configuration.js"></script>
+<!-- Facebox jQuery Plugin -->
+<script type="text/javascript" src="js/popus.js"></script>
+<!-- jQuery WYSIWYG Plugin -->
+<script type="text/javascript" src="js/jquery.wysiwyg.js"></script>
+</head>
+<body>     
+<div id="body-wrapper">
+  <!-- Wrapper for the radial gradient background -->
+  <div id="sidebar">
+    <div id="sidebar-wrapper">
+      <!-- Sidebar with logo and menu -->
+      <h1 id="sidebar-title"><a href="#">爱梦影院票务管理系统</a></h1>
+      <!-- Logo (221px wide) -->
+      <a href="#"><img id="logo" src="images/logopiao.png" alt="华录新媒票务管理系统" /></a>
+      <!-- Sidebar Profile links -->
+      <div id="profile-links"> 您好, <a href="#" title="Edit your profile">管理员</a><a href="#" rel="modal" title="3 Messages">蒙太奇</a><br />
+        
+        <!--<a href="#" title="View the Site">返回首页</a> | --><a href="#" title="Sign Out">安全退出</a> </div>
+      <ul id="main-nav">
+						<li><a href="index.html" class="nav-top-item no-submenu">Index 首页 </a>
+						</li>
+						<li><a href="code.html" class="nav-top-item no-submenu">Code 兑换码 </a>
+						</li>
+						<li> <a href="moive.html" class="nav-top-item current  no-submenu">Moive 增加电影 </a>
+						</li>
+						<li> <a href="user.html" class="nav-top-item no-submenu">User 用户信息  </a>
+						</li>
+						<li> <a href="order.html" class="nav-top-item no-submenu">Order 查看订单 </a>
+						</li>
+					</ul>
+      
+    </div>
+  </div> 
+  <div id="main-content">
+    <div class="top_width">
+    <h2>Welcome</h2>
+    <p id="page-intro">欢迎进入爱梦影院票务管理系统</p>
+    </div>
+    <div class="clear"></div>
+    <div class="content-box">
+      <div class="content-box-header">
+        <h3>增加电影</h3>
+        <div class="clear"></div>
+      </div>
+      <div class="content-box-content">
+        <div class="tab-content" id="tab2">
+          <form action="#" method="post">
+            <fieldset>
+            <p>
+              <label>电影名称</label>
+              <input class="text-input small-input" type="text" id="small-input" name="small-input" />
+              
+              <br />
+              <small>请输入希望添加的电影名称，此项为必填项</small> </p>
+            <p>
+              <label>主演</label>
+              <input class="text-input small-input" type="text" id="medium-input" name="medium-input" />
+              
+            <p>
+              <label>价格</label>
+              <input class="text-input small-input" type="text" id="large-input" name="large-input" />
+            </p>
+            <p>
+              <label>上传封面图片</label>
+              <input class="text-input small-input" type="file" id="large-input" name="large-input" />
+            </p>
+            <p>
+              <label>选择类型</label>
+              <input type="checkbox" name="checkbox1" />
+              	浪漫爱情
+              <input type="checkbox" name="checkbox2" />
+              	科技奇幻
+              <input type="checkbox" name="checkbox3" />
+              	惊悚恐怖
+              <input type="checkbox" name="checkbox4" />
+              	悬疑/侦探/推理
+              <input type="checkbox" name="checkbox5" />
+              	幽默搞笑
+            </p>
+            <p>
+              <label>国家</label>
+              <input type="radio" name="gj1" />
+             	中国
+              <input type="radio" name="gj2" />
+              	美国
+              <input type="radio" name="gj3" />
+             	法国
+              <input type="radio" name="gj4" />
+             	韩国
+              <input type="radio" name="gj5" />
+             	英国
+              <input type="radio" name="gj6" />
+             	其他
+             </p>
+             <p>
+              <label>场次</label>
+              <input type="radio" name="cc1" />
+             	上午场
+              <input type="radio" name="cc2" />
+              	下午场
+              <input type="radio" name="cc3" />
+             	午夜场
+             </p>
+            <p>
+              <label>输入电影简介</label>
+              <textarea class="text-input textarea wysiwyg" id="textarea" name="textfield" cols="79" rows="15"></textarea>
+            </p>
+            <p>
+              <input class="button" type="submit" value="提交" />
+            </p>
+            </fieldset>
+            <div class="clear"></div>
+            <!-- End .clear -->
+          </form>
+        </div>
+      </div>
+    </div>   
+    <div class="clear"></div>
+    <div id="footer"> <small>
+      <!-- Remove this notice or replace it with whatever you want -->
+      &#169; Copyright 2010 Your Company | Powered by <a href="#">admin templates</a> | <a href="#">Top</a> </small> </div>
+    <!-- End #footer -->
+  </div>
+  <!-- End #main-content -->
+</div>
+</body>
+<!-- Download From www.exet.tk-->
+</html>

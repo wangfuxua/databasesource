@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>首页</title>
+		<!--<link rel="stylesheet" type="text/css" href="css/public.css" />-->
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css" />
+		<script src="http://api.map.baidu.com/api?v=1.5&ak=A7551163b78d53396f86ac5a34ad3ac9" type="text/javascript"></script>
+		<script src="js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mobile-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+
+		<script type="text/javascript">
+			 //声明公共坐标参数
+			var jnum, wnum;
+			 //          百度地图插件开始
+			 //			function loadJScript() {
+			 //				var script = document.createElement("script");
+			 //				script.type = "text/javascript";
+			 //				script.src = "http://api.map.baidu.com/api?v=2.0&ak=A7551163b78d53396f86ac5a34ad3ac9&callback=initialize";
+			 //				document.body.appendChild(script);
+			 //			}
+			 //
+			 //			function initialize() {
+			 //				var mp = new BMap.Map('allmap');
+			 //				mp.centerAndZoom(new BMap.Point(121.491, 31.233), 11);
+			 //			}
+			 //			window.onload = loadJScript; //异步加载地图
+			 //          百度地图插件结束
+			var watchId;
+
+			function geoInf(position) {
+				var str = "";
+				var timestamp = Date.parse(new Date());
+				var timeflag = timestamp; //获取到地理位置信息的时间戳；一个毫秒数；
+				str += "时间戳：" + timeflag + "<br/>";
+				var codns = position.coords; //获取地理坐标信息；
+				var lat = codns.latitude; //获取到当前位置的纬度；
+				str += "纬度：" + lat + "<br/>";
+				var longt = codns.longitude; //获取到当前位置的经度
+				str += "经度：" + longt + "<br/>";
+				var alt = codns.altitude; //获取到当前位置的海拔信息；
+				str += "海拔：" + alt + "<br/>";
+				var accu = codns.accuracy; //地理坐标信息精确度信息；
+				str += "精确度：" + accu + "<br/>";
+				var altAcc = codns.altitudeAccuracy; //获取海拔信息的精确度；
+				str += "海拔精确度：" + altAcc + "<br/>";
+				var head = codns.heading; //获取设备的移动方向；
+				str += "移动方向：" + head + "<br/>";
+				var sped = codns.speed; //获取设备的移动速度；
+				str += "移动速度：" + sped;
+				outLine(str);
+			}
+
+			function watchPos() {
+				if (watchId) {
+					return;
+				}
+				watchId = plus.geolocation.watchPosition(function(p) {
+					outSet("监听位置变化信息:");
+					geoInf(p);
+				}, function(e) {
+					outSet("监听位置变化信息失败：" + e.message);
+				});
+			}
+
+			function clearWatch() {
+					if (watchId) {
+						outSet("停止监听位置变化信息");
+						plus.geolocation.clearWatch(watchId);
+						watchId = null;
+					}
+				}
+				/*定时器获取坐标*/
+			var sh;
+
+			function test() {
+				sh = setInterval(watchPos(), 5000);
+			}
+
+			function clst() {
+					clearInterval(sh);
+					clearWatch();
+				}
+				/*获取设备信息*/
+
+			function getPushInfo() {
+				var info = plus.push.getClientInfo();
+				texts("获取客户端推送标识信息：");
+				texts("<br>token: " + info.token + "<br>clientid: " + info.clientid + "<br>appid: " + info.appid + "<br>appkey: " + info.appkey);
+			}
+
+			function texts(s) {
+				var info = document.getElementById("info");
+				info.innerHTML = s + "<br>"
+			}
+			$(document).on("pageload", function(event, data) {
+				alert("触发 pageload 事件！\nURL:");
+			});
+		</script>
+		<style>
+			body {
+				/*background: #fff;*/
+			}
+		</style>
+	</head>
+
+	<body>
+		<div data-role="page" id="pageindex">
+			<div data-role="header">
+				<button data-icon="back" data-iconpos="left" onclick="test()">退出</button>
+				<h2>欢迎您，XXX</h2>
+
+				<div data-role="navbar">
+					<ul>
+						<li><a class="ui-btn-active" data-icon="home" data-iconpos="left">首页</a>
+						</li>
+						<li><a class="" data-icon="search" href="#search" data-transition="flip">运单查询</a>
+						</li>
+						<li><a data-icon="navigation" href="#location" data-transition="flip">车辆管理</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div data-role="content" style="width: 90%; margin: 0 auto;">
+				<div data-role="collapsible" data-icon="carat-u" data-mini="false" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-collapsed="false">
+					<h1>新闻公告</h1>
+					<div data-role="collapsible-set">
+						<div data-role="collapsible">
+							<h1>新闻公告一</h1>
+							<p>我是被展开的内容。</p>
+						</div>
+						<div data-role="collapsible">
+							<h1>新闻公告二</h1>
+							<p>我是被展开的内容。</p>
+						</div>
+					</div>
+				</div>
+				<div data-role="collapsible" data-icon="carat-u" data-mini="false" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+					<h1>账户信息</h1>
+					<div class="ui-grid-a">
+						<div class="ui-block-a">
+							<span>账户余额</span>
+						</div>
+						<div class="ui-block-b">
+							<i style="font-style: normal;color: orange;">1437.56</i><span>元</span>
+						</div>
+						<div class="ui-block-a">
+							<span>授信额度</span>
+						</div>
+						<div class="ui-block-b">
+							<i style="font-style: normal;color: orange;">10000</i><span>元</span>
+						</div>
+						<div class="ui-block-a">
+							<span>可用额度</span>
+						</div>
+						<div class="ui-block-b">
+							<i style="font-style: normal;color: orange;">9935</i><span>元</span>
+						</div>
+					</div>
+				</div>
+				<div data-role="controlgroup" data-type="vertical">
+					<!--vertical  垂直 horizontal 水平-->
+					<a href="#pageone" data-role="button" data-transition="flip">未申请保理运单</a>
+					<a href="#pagetwo" data-role="button" data-transition="flip">已成功放款运单</a>
+					<a href="#pagethree" data-role="button" data-transition="flip">未处理还款</a>
+				</div>
+
+			</div>
+			<div data-role="footer" data-position="fixed" data-position="full">
+				<h3>天津随e付商业保理有限公司北京分公司</h1>
+			</div>
+		</div>
+		<div data-role="page" id="pageone">
+			<div data-role="header">
+				<h2>未申请保理运单</h2>
+			</div>
+			<div data-role="content">
+
+				<ul data-role="listview" data-filter="true" data-filter-placeholder="查询" style="margin-bottom: 0px;">
+					<li data-role="list-divider">运单序列</li>
+					<!--循环开始-->
+					<li>
+						<div class="ui-grid-c">
+							<div class="ui-block-a"><span>运单序列号：</span>
+							</div>
+							<div class="ui-block-c"><span>478001750413</span>
+							</div>
+							<div class="ui-block-a"><span>运单号：</span>
+							</div>
+							<div class="ui-block-b"><span>1</span>
+							</div>
+							<div class="ui-block-c"><span>始发地：</span>
+							</div>
+							<div class="ui-block-d"><span>江苏省</span>
+							</div>
+							<div class="ui-block-a"><span>目的地：</span>
+							</div>
+							<div class="ui-block-b"><span>北京市</span>
+							</div>
+							<div class="ui-block-c"><span>货物名称：</span>
+							</div>
+							<div class="ui-block-d"><span>orange</span>
+							</div>
+							<div class="ui-block-a"><span>承运数量：</span>
+							</div>
+							<div class="ui-block-b"><span>1</span>
+							</div>
+							<div class="ui-block-c"><span>总运费：</span>
+							</div>
+							<div class="ui-block-d"><span>1</span>
+							</div>
+							<div class="ui-block-a"><span>运单状态：</span>
+							</div>
+							<div class="ui-block-b"><span>定位结束</span>
+							</div>
+						</div>
+					</li>
+					<!--循环结束-->
+					<li data-role="list-divider">运单序列</li>
+					<li>
+						<div class="ui-grid-c">
+							<div class="ui-block-a"><span>运单序列号：</span>
+							</div>
+							<div class="ui-block-c"><span>478001750413</span>
+							</div>
+							<div class="ui-block-a"><span>运单号：</span>
+							</div>
+							<div class="ui-block-b"><span>1</span>
+							</div>
+							<div class="ui-block-c"><span>始发地：</span>
+							</div>
+							<div class="ui-block-d"><span>江苏省</span>
+							</div>
+							<div class="ui-block-a"><span>目的地：</span>
+							</div>
+							<div class="ui-block-b"><span>北京市</span>
+							</div>
+							<div class="ui-block-c"><span>货物名称：</span>
+							</div>
+							<div class="ui-block-d"><span>orange</span>
+							</div>
+							<div class="ui-block-a"><span>承运数量：</span>
+							</div>
+							<div class="ui-block-b"><span>1</span>
+							</div>
+							<div class="ui-block-c"><span>总运费：</span>
+							</div>
+							<div class="ui-block-d"><span>1</span>
+							</div>
+							<div class="ui-block-a"><span>运单状态：</span>
+							</div>
+							<div class="ui-block-b"><span>定位结束</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<a href="javascript:void(0)" data-role="button" data-rel="back">返回</a>
+			</div>
+			<div data-role="footer" data-position="fixed" data-position="full">
+				<h3>客服热线：400-660-5661</h1>
+			</div>
+		</div>
+		<div data-role="page" id="pagetwo">
+			<div data-role="header">
+				<h2>已成功放款运单</h2>
+			</div>
+			<div data-role="content">
+				
+				<a href="javascript:void(0)" data-role="button" data-rel="back">返回</a>
+			</div>
+			<div data-role="footer" data-position="fixed">
+					<h3>客服热线：400-660-5661</h1>
+			</div>
+		</div>
+		<div data-role="page" id="pagethree">
+			<div data-role="header">
+				<h2>未处理还款</h2>
+			</div>
+			<div data-role="content">
+				
+				<a href="javascript:void(0)" data-role="button" data-rel="back">返回</a>
+			</div>
+			<div data-role="footer"  data-position="fixed">
+					<h3>客服热线：400-660-5661</h1>
+			</div>
+		</div>
+		<div data-role="page" id="location">
+			<div data-role="header">
+				<a href="javascript:void(0)" data-role="button" data-rel="back" data-icon="back">返回</a>
+				<h2>定位服务</h2>
+			</div>
+			<div data-role="content">
+				<!--<a href="javascript:void(0)" data-role="button" data-icon="location"  onclick="watchPos();">开始定位</a>-->
+				<div id="allmap" style="width:100%; height:320px"></div>
+					<div id="driving_way">
+					<select>
+					<option value="0">最少时间</option>
+					<option value="1">最短距离</option>
+					<option value="2">避开高速</option>
+					</select>
+					<input type="button" id="result" value="查询"/>
+				</div>
+				<div id="r-result"></div>
+				
+				<a href="javascript:void(0)" data-role="button" data-icon="location"  onclick="test();">开始定位</a>
+				<div id="output">
+					Geolocation可获取设备位置信息，包括经度、纬度、高度等信息。
+				</div>
+				<!--<a href="javascript:void(0)" data-role="button" data-icon="location"  onclick="clearWatch();">停止定位</a>-->
+				<a href="javascript:void(0)" data-role="button" data-icon="location"  onclick="clst();">停止定位</a>
+			</div>
+		</div>
+		<div data-role="page" id="search">
+			<div data-role="header">
+				<a href="javascript:void(0)" data-role="button" data-rel="back" data-icon="back">返回</a>
+				<h2>订单查询</h2>
+			</div>
+			<div data-role="content">
+				<a href="javascript:void(0)" data-role="button" data-icon="action"   onclick="getPushInfo();">可进行信息推送</a>
+				<div id="info">
+					获取推送识别码
+				</div>
+			</div>
+			<ul data-role="listview" data-filter="true" data-filter-placeholder="查询" style=" width:100%; margin: 0 auto;">
+					<li data-role="list-divider">运单序列</li>
+					<!--循环开始-->
+					<li>
+						<div class="ui-grid-c">
+							<div><span>运单序列号：</span><span>478</span>
+							</div>
+							<div class="ui-block-a"><span>运单号：</span>
+							</div>
+							<div class="ui-block-b"><span>1</span>
+							</div>
+							<div class="ui-block-c"><span>始发地：</span>
+							</div>
+							<div class="ui-block-d"><span>江苏省</span>
+							</div>
+							<div class="ui-block-a"><span>目的地：</span>
+							</div>
+							<div class="ui-block-b"><span>北京市</span>
+							</div>
+							<div class="ui-block-c"><span>货物名称：</span>
+							</div>
+							<div class="ui-block-d"><span>orange</span>
+							</div>
+							<div class="ui-block-a"><span>承运数量：</span>
+							</div>
+							<div class="ui-block-b"><span>1</span>
+							</div>
+							<div class="ui-block-c"><span>总运费：</span>
+							</div>
+							<div class="ui-block-d"><span>1</span>
+							</div>
+							<div class="ui-block-a"><span>运单状态：</span>
+							</div>
+							<div class="ui-block-b"><span>定位结束</span>
+							</div>
+						</div>
+					</li>
+					<!--循环结束-->
+					<li data-role="list-divider">运单序列</li>
+					<li>
+						<div class="ui-grid-c">
+							<div><span>运单序列号：</span><span>413</span>
+							</div>
+							<div class="ui-block-a"><span>运单号：</span>
+							</div>
+							<div class="ui-block-b"><span>1</span>
+							</div>
+							<div class="ui-block-c"><span>始发地：</span>
+							</div>
+							<div class="ui-block-d"><span>四川省</span>
+							</div>
+							<div class="ui-block-a"><span>目的地：</span>
+							</div>
+							<div class="ui-block-b"><span>北京市</span>
+							</div>
+							<div class="ui-block-c"><span>货物名称：</span>
+							</div>
+							<div class="ui-block-d"><span>orange</span>
+							</div>
+							<div class="ui-block-a"><span>承运数量：</span>
+							</div>
+							<div class="ui-block-b"><span>1</span>
+							</div>
+							<div class="ui-block-c"><span>总运费：</span>
+							</div>
+							<div class="ui-block-d"><span>1</span>
+							</div>
+							<div class="ui-block-a"><span>运单状态：</span>
+							</div>
+							<div class="ui-block-b"><span>定位结束</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			<div data-role="footer"  data-position="fixed">
+					<h3>客服热线：400-660-5661</h1>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+			// 百度地图API功能
+			//定位
+				var geolocation = new BMap.Geolocation();
+				geolocation.getCurrentPosition(function(r){
+				if(this.getStatus() == BMAP_STATUS_SUCCESS){
+				var mk = new BMap.Marker(r.point);
+				map.addOverlay(mk);
+				map.panTo(r.point);
+				alert('您的位置：'+r.point.lng+','+r.point.lat);
+					}
+					else {
+				alert('failed'+this.getStatus());
+					}        
+				},{enableHighAccuracy: true})
+			 //GPS坐标
+			var x = 116.18627;
+			var y = 39.936313; 
+			var ggPoint = new BMap.Point(x,y);
+			//地图初始化
+			var map = new BMap.Map("allmap");
+			var start = new BMap.Point(116.301934,39.977552);
+			var end = "虹桥机场";
+			map.centerAndZoom(ggPoint, 15);
+			
+			 //三种驾车策略：最少时间，最短距离，避开高速
+			var routePolicy = [BMAP_DRIVING_POLICY_LEAST_TIME, BMAP_DRIVING_POLICY_LEAST_DISTANCE, BMAP_DRIVING_POLICY_AVOID_HIGHWAYS];
+			$("#result").click(function() {
+				map.clearOverlays();
+				var i = $("#driving_way select").val();
+				search(beg, end, routePolicy[i]);
+				function search(start, end, route) {
+					var driving = new BMap.DrivingRoute(map, {
+						renderOptions: {
+							map: map,
+							autoViewport: true
+						},
+						policy: route
+					});
+					driving.search(start, end);
+				}
+			});
+		</script>

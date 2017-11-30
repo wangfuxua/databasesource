@@ -1,0 +1,57 @@
+
+/* 初始化CSS */
+body{font: 12px/1.5 arial, simsun, georgia, verdana, helvetica, sans-serif; text-align:justify; text-justify:inter-ideograph; color:#333333; background:none;}
+html,body,h1,h2,h3,h4,h5,h6,p,dl,dt,dd,ul,ol,li,form,th,td,table,label,article,aside,dialog,footer,header,section,footer,nav,figure,hgroup{margin:0;padding:0;}
+html{ -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+ul,li,ol{list-style:none outside none;}
+img{ border:0 none; vertical-align:middle;}
+input,select{vertical-align:middle;}
+.fl { float:left; display:inline;}
+.fr { float:right; display:inline;}
+
+table { border-collapse:collapse; }
+address, caption, cite, code, dfn, th, var, optgroup ,em{font-style: inherit;font-weight: inherit;}
+h1, h2, h3, h4, h5, h6 {font-size: 100%;font-weight: normal;}
+abbr, acronym {border: 0;font-variant: normal;}
+input, button, textarea, optgroup, option {font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;}
+input, button, textarea, select {*font-size: 100%;}
+input[type="button"], input[type="submit"], input[type="reset"]{-webkit-appearance: none;}
+input[type="text"], input[type="password"], textarea { outline-style:none; -webkit-appearance:none; }
+textarea{ resize:none;}
+input,textarea,button {border:0 none;background:#fff;}
+
+/*focus*/
+input,textarea,a,button {outline:none;}
+input::-moz-focus-inner {border:0;}
+
+/*a*/
+a{ color:#666; text-decoration:none;}
+a:visited { color:#666; }
+a:hover, a:active, a:focus{ color:#ff8400; text-decoration:underline; }
+
+/*clear*/
+.clearfix:after { content:"."; display:block; height:0; visibility:hidden; clear:both; }
+.clearfix {zoom:1;}
+.clearit { clear:both; height:0; font-size:0; overflow:hidden; }
+
+/*overhidden*/
+.overhidden{
+  white-space: nowrap;
+  word-break: keep-all;
+  text-overflow: ellipsis;
+}
+
+/*none*/
+.none {
+display:none
+}
+
+.login_img {
+	width: 100%;
+}
+.login_img img {
+	width: 60%;
+	display: block;
+	margin: 0 auto;
+}

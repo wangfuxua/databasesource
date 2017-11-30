@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta charset="utf-8">
+		<title>爱梦影院票务管理系统</title>
+		<!--                       CSS                       -->
+		<!-- Reset Stylesheet -->
+		<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" />
+		<!-- Main Stylesheet -->
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+		<!-- Invalid Stylesheet. This makes stuff look pretty. Remove it if you want the CSS completely valid -->
+		<link rel="stylesheet" href="css/invalid.css" type="text/css" media="screen" />
+		<!--glDatePicker.flatwhite-->
+		<link rel="stylesheet" href="js/My97DatePickerBeta/My97DatePicker/skin/WdatePicker.css" type="text/css" media="screen" />
+		<!--                       Javascripts                       -->
+		<!-- jQuery -->
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<!-- jQuery Datepicker Plugin -->
+		<script type="text/javascript" src="js/My97DatePickerBeta/My97DatePicker/WdatePicker.js"></script>
+		<!-- jQuery Configuration -->
+		<script type="text/javascript" src="js/simpla.jquery.configuration.js"></script>
+		<!-- Facebox jQuery Plugin -->
+		<script type="text/javascript" src="js/popus.js"></script>
+		<!-- jQuery WYSIWYG Plugin -->
+		<script type="text/javascript" src="js/jquery.wysiwyg.js"></script>
+		<script type="text/javascript">
+		</script>
+	</head>
+
+	<body>
+		<div id="messages" style="display: none">
+			<!-- Messages are shown when a link with these attributes are clicked: href="#messages" rel="modal"  -->
+			<h3>增加兑换码</h3>
+			<form action="#" method="post">
+				<p class="fly clearfix">
+					<label>生成数量</label>
+					<input type="text" class="" alt="text">
+				</p>
+				<p class="fly clearfix">
+					<label>生成位数</label>
+					<input type="text" alt="text">
+				</p>
+				<!--<div> <strong>25th April 2009</strong> by Admin<br />
+          <small><a href="#" class="remove-link" title="Remove message">Remove</a></small> </div>-->
+				<fieldset>
+					<h4>描述</h4>
+					<textarea class="textarea" name="textfield" cols="79" rows="1"></textarea>
+				</fieldset>
+				<input class="button" type="submit" value="确定" />
+			</form>
+		</div>
+		<!-- End #messages -->
+
+		<div id="body-wrapper">
+			<!-- Wrapper for the radial gradient background -->
+			<div id="sidebar">
+				<div id="sidebar-wrapper">
+					<!-- Sidebar with logo and menu -->
+					<h1 id="sidebar-title"><a href="#">爱梦影院票务管理系统</a></h1>
+					<!-- Logo (221px wide) -->
+					<a href="#">
+						<img id="logo" src="images/logopiao.png" alt="华录新媒票务管理系统" />
+					</a>
+					<!-- Sidebar Profile links -->
+					<div id="profile-links"> 您好, <a href="#" title="Edit your profile">管理员</a><a href="#" rel="modal" title="3 Messages">蒙太奇</a>
+						<br />
+
+						<!--<a href="#" title="View the Site">返回首页</a> | --><a href="#" title="Sign Out">安全退出</a> </div>
+					<ul id="main-nav">
+						<li><a href="index.html" class="nav-top-item no-submenu">Index 首页 </a>
+						</li>
+						<li><a href="code.html" class="nav-top-item  current no-submenu">Code 兑换码 </a>
+						</li>
+						<li> <a href="moive.html" class="nav-top-item  no-submenu">Moive 增加电影 </a>
+						</li>
+						<li> <a href="user.html" class="nav-top-item no-submenu">User 用户信息  </a>
+						</li>
+						<li> <a href="order.html" class="nav-top-item no-submenu">Order 查看订单 </a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+
+			<div id="main-content">
+				<div class="top_width">
+					<h2>Welcome</h2>
+					<p id="page-intro">欢迎进入爱梦影院票务管理系统</p>
+				</div>
+				<ul class="shortcut-buttons-set clearfix">
+					<li><a class="shortcut-button" rel="modal" href="#messages"><span><img src="images/icons/add.png" alt="icon" /><br>添加兑换码</span></a>
+					</li>
+				</ul>
+				<div class="clear"></div>
+				<div class="content-box">
+					<div class="content-box-header">
+						<h3>数据管理</h3>
+						<div class="clear"></div>
+					</div>
+					<div class="content-box-content">
+						<div class="tab-content default-tab" id="tab1">
+							<table>
+								<thead>
+									<tr>
+										<th>兑换码</th>
+										<th>兑换状态</th>
+										<th>描述</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tfoot>
+									<tr>
+										<td colspan="9">
+											<div class="clear"></div>
+										</td>
+									</tr>
+								</tfoot>
+								<tbody>
+									<tr>
+
+										<td>蒹葭苍苍</td>
+										<td>500</td>
+										<td>123846</td>
+										<td>
+											<a href="#" title="Delete">
+												<img src="images/icons/cross.png" alt="Delete" />
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td>蒹葭苍苍</td>
+										<td>500
+										</td>
+										<td>123846</td>
+										<td>											
+											<a href="#" title="Delete">
+												<img src="images/icons/cross.png" alt="Delete" />
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td>蒹葭苍苍</td>
+										<td>500
+										</td>
+										<td>123846</td>
+										<td>									
+											<a href="#" title="Delete">
+												<img src="images/icons/cross.png" alt="Delete" />
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td>蒹葭苍苍</td>
+										<td>500
+										</td>
+										<td>123846</td>
+										<td>											
+											<a href="#" title="Delete">
+												<img src="images/icons/cross.png" alt="Delete" />
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td>蒹葭苍苍</td>
+										<td>500
+										</td>
+										<td>123846</td>
+										<td>											
+											<a href="#" title="Delete">
+												<img src="images/icons/cross.png" alt="Delete" />
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td>蒹葭苍苍</td>
+										<td>500
+										</td>
+										<td>123846</td>
+										<td>											
+											<a href="#" title="Delete">
+												<img src="images/icons/cross.png" alt="Delete" />
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td>蒹葭苍苍</td>
+										<td>500
+										</td>
+										<td>123846</td>
+										<td>											
+											<a href="#" title="Delete">
+												<img src="images/icons/cross.png" alt="Delete" />
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td>蒹葭苍苍</td>
+										<td>500
+										</td>
+										<td>123846</td>
+										<td>											
+											<a href="#" title="Delete">
+												<img src="images/icons/cross.png" alt="Delete" />
+											</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>						
+					</div>					
+				</div>				
+				<div class="clear"></div>
+				<div id="footer"> <small>
+      &#169; Copyright 2015  | Powered by <a href="#">love</a> | <a href="#">Top</a> </small>  </div>
+				
+			</div>
+			
+		</div>
+	</body>
+	
+
+</html>
