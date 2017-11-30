@@ -1,0 +1,7 @@
+CREATE TRIGGER `message_tip_gold` AFTER INSERT on log_account
+FOR EACH ROW 
+BEGIN
+	IF(new.type=1 and new.gold>0) THEN
+		update `message_tip` set weight=weight+new.gold where id=1;
+	end if;
+END;
